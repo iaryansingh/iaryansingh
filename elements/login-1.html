@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM-1</title>
+    <link rel="stylesheet" href="utils.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--font1);
+        }
+        body{
+            background: url(child-4.png) no-repeat;
+            background-position: center;
+            background-size: cover;
+            min-height: 100vh;
+            width: 100%;
+        }
+
+        .container{
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            min-height: 100vh;
+            margin-left: 200px;
+        }
+
+        .form-box{
+            position: relative;
+            width: 400px;
+            height: 550px;
+            border: 2px solid rgba(255,255,2550.5);
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .form-box h2{
+            color: white;
+            text-align: center;
+            font-size: 32px;
+        }
+
+        .form-box .input-box{
+            position: relative;
+            margin: 30px 0;
+            width: 310px;
+            border-bottom: 2px solid #ffffff;
+        }
+
+        .form-box .input-box input{
+            width: 100%;
+            height:45px;
+            background: transparent;
+            border: none;
+            outline: none;
+            padding: 0 20 0 5px;
+            color: #fff;
+            font-size: 16px;
+        }
+        i{
+            position: absolute;
+            color: white;
+            top: 13px;
+            right: 0;
+        }
+
+        input::placeholder{
+            color: white;
+        }
+
+        .btn-r{
+            color: white;
+            background: blue;
+            width: 100%;
+            height: 50px;
+            border-radius: 5px;
+            outline:none;
+            border: none;
+            font-size: 17px;
+            cursor: pointer;
+            box-shadow: 3px 0 10px rgb(43, 41, 41);
+        }
+
+        #result{
+            color: red;
+            font-weight: 600;
+            position: relative;
+            top: 25px;
+        }
+
+       
+        .open-slide{
+            top: 50%;
+            transform: translate(-50%, -50%) scale(1);
+            visibility: visible;
+        }
+
+        @media screen and (max-width: 760px){
+            .container{
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- -----Registration Form----- -->
+    <div class="container">
+        <div class="form-box">
+            <form action="" name="Formfill" onsubmit="return validation()">
+                <h2>Log In</h2>
+                <p id="result"></p>
+
+                <div class="input-box">
+                    <i class='bx bxs-envelope'></i>
+                    <input type="email" name="Email" placeholder="Email">
+                </div>
+                <div class="input-box">
+                    <i class='bx bxs-lock-alt'></i>
+                    <input type="password" name="Password" placeholder="Password">
+                </div>
+               
+                <div class="button">
+                    <input type="submit" class="btn-r" onclick="validation()"  value="Register">
+                </div>
+
+            </form>    
+        </div>
+        
+    </div>
+ 
+    <!----------script for registration--------->
+    <script>
+        function validation(){
+            if(document.Formfill.Username.value==""){
+                document.getElementById("result").innerHTML="Enter Username*";
+                return false;
+            }
+            else if(document.Formfill.Username.Value.length<6){
+                document.getElementById("result").innerHTML="Atleast six letter*";
+                return false;
+            }
+            else if(document.Formfill.Email.Value==""){
+                document.getElementById("result").innerHTML="Enter your Email*";
+                return false;
+            }
+
+            else if(document.Formfill.Password.Value==""){
+                document.getElementById("result").innerHTML="Enter your Password*";
+                return false;
+            }
+            else if(document.Formfill.Password.Value.length<6){
+                document.getElementById("result").innerHTML="Password must be 6-digits*";
+                return false;
+            }
+
+            else if(document.Formfill.CPassword.Value==""){
+                document.getElementById("result").innerHTML="Enter Confirm Password*";
+                return false;
+            }
+
+            else if(document.Formfill.CPassword.Value !== document.Formfill.Password.Value){
+                document.getElementById("result").innerHTML="Password does'nt matched*";
+                return false;
+            }
+
+            else if(document.Formfill.Password.Value == document.Formfill.CPassword.Value){
+                popup.classList.add("open-slide")
+                return false;
+            }
+        }
+
+        var popup=document.getElementById('popup');
+        function CloseSlide(){
+            popup.classList.remove('open-slide')
+        }
+    </script>
+</body>
+</html> 

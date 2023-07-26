@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form-1</title>
+    <link rel="stylesheet" href="form-1.css">
+</head>
+<body>
+    <div class="container">
+        <div class="regis-box">
+            <form action="#">
+                <div class="page-box">
+                    <div class="regis-title">
+                        <h2 class="regisTitle-Text">Register</h2>
+                        <p class="useremail">Cognitive Brilliance</p>
+                    </div>
+
+                    <div class="page regis-step-1">
+                        
+                        <div class="input-box">
+                            <input type="text" class="name-input"  autofocus required>
+                            <label for="">Enter your Name</label>
+                        </div>
+
+                        <div class="input-box">
+                            <input type="text" class="#"  required>
+                            <label for="">City</label>
+                        </div>
+
+                        <div class="input-box">
+                            <input type="text" class="#"  required>
+                            <label for="">State</label>
+                        </div>
+
+                        <div class="input-box">
+                            <input type="text" class="#"  required>
+                            <label for="">Country</label>
+                        </div>
+
+                        <div class="input-box">
+                            <input type="text" class="#"  required>
+                            <label for="">Mobile Number</label>
+                        </div>
+
+                        <div class="input-box">
+                            <input type="text" class="email-input"  required>
+                            <label for="">Enter your Email</label>
+                        </div>
+
+                        <div class="input-box">
+                            <input type="text" class="#"  required>
+                            <label for="">Parents phone number(optional)</label>
+                        </div>
+
+                        <div class="input-box">
+                            <input type="text" class="#"  required>
+                            <label for="">Date of Birth</label>
+                        </div>
+
+
+
+                        <div class="btn-box">
+                            <button ><a href="index.html" class="btn-back0" >Back</a> </button>
+
+                            <button class="btn-next">Next</button>
+                        </div>
+                    </div>
+
+                    <div class="page regis-step-2">
+
+                        <div class="input-box">
+                            <input type="text" class="#"  required>
+                            <label for="">Choose your Olympiad</label>
+                        </div>
+
+                        <div class="input-box">
+                            <input type="text" class="#"  required>
+                            <label for="">Choose Date</label>
+                        </div>
+
+                        <div class="input-box">
+                            <input type="text" class="#" autofocus required>
+                            <label for=""> School / Institute</label>
+                        </div>
+
+                        <div class="input-box">
+                            <input type="text" class="#"  required>
+                            <label for="">Class</label>
+                        </div>
+
+                        <div class="input-box">
+                            <input type="text"  class="#"  required>
+                            <label for="">How you heard about us?</label>
+                           
+                        </div>
+
+                        <div class="btn-box">
+                            <button class="btn-back">Back</button>
+                            <button type="submit" class="btn-regis">Submit</button>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+      <!------popup value bar----->
+      <div class="popup" id="popup">
+        <ion-icon name="checkmark-circle-outline"></ion-icon>
+       <h2>Thank you!</h2>
+       <p>Thankyou for registering with us. Your exam slot is booked & you will be sent an invitation on your email id with your Id & password along with the exam link.</p>
+       <a href="form-login-1.html"><button onclick="CloseSlide()">OK</button> </a>
+   </div>
+   </div>
+
+    <script>
+        const pageBox = document.querySelector('.page-box');
+        const btnNext = document.querySelector('.btn-next');
+        const btnBack = document.querySelector('.btn-back');
+        const regisTitle = document.querySelector('.regisTitle-Text');
+
+        const userEmail = document.querySelector('.useremail');
+
+        const emailInput = document.querySelector('.email-input');
+
+        btnNext.onclick = (e) => {
+            e.preventDefault();
+            pageBox.classList.add('active-pass');
+            regisTitle.innerHTML = 'Welcome';
+            userEmail.innerHTML = emailInput.value;
+        };
+
+        btnBack.onclick = (e) => {
+            e.preventDefault();
+            pageBox.classList.remove('active-pass');
+            regisTitle.innerHTML = 'Register';
+            userEmail.innerHTML = 'Cognitive Brilliance';
+            userInput.focus();
+        };
+    </script>
+
+    <!-- ------popup------- -->
+
+    <script>
+         var popup=document.getElementById('popup');
+        function CloseSlide(){
+            popup.classList.remove('open-slide')
+        }
+    </script>
+</body>
+</html>
