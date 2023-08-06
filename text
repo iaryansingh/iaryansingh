@@ -3,8 +3,8 @@ cd /home/adapttive/PORTFOLIO
 git remote add origin https://github.com/iaryansingh/portfolio.git
 >>>>>>> try 1
 >>>>>>> fgafa
-git branch -M main
+git commit -m main
 git push -u origin main
 
 
-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
+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
